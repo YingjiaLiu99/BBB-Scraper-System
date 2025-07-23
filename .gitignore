@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtualenv
+.venv/
+
+# Output files
+data/*.csv
+*.log
+
+# Playwright cache (optional)
+playwright/.cache/
+
+# VSCode or other editor settings
+.vscode/
+.idea/
+
+# MacOS
+.DS_Store
+
+# Environment
+.env
