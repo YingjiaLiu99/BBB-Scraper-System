@@ -11,6 +11,7 @@ def main():
 
     print(f"Scraping: {args.url}")
     data = scrape_medical_billing_listings(args.url)
+
     export_to_csv(data, args.out)
 
 if __name__ == '__main__':

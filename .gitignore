@@ -27,3 +27,5 @@ playwright/.cache/
 
 # Environment
 .env
+
+**/node_modules/
