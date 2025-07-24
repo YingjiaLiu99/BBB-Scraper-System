@@ -9,7 +9,7 @@ import path from 'path';
  */
 export function runPythonScraper(url: string, outputCsvPath: string): Promise<void> {
   return new Promise((resolve, reject) => {
-    const rootDir = path.resolve(process.cwd(), '..'); // Adjust to BBB-Scraper-System
+    const rootDir = path.resolve(process.cwd(), '..'); // Adjust to BBB-Scraper-System folder position
     const pythonPath = path.join(rootDir, '.venv/bin/python');
     const scriptPath = path.join(rootDir, 'scraper/main.py');
 

@@ -21,11 +21,8 @@ def get_detail_info(context: BrowserContext, url: str) -> dict:
         page.goto(url, timeout=60000)
         page.wait_for_timeout(3000)  # Wait for JavaScript content to load
 
-        # Principal contact selector:
-        # Usually inside a section labeled "Business Details" or similar
         contact_element = page.query_selector("text=Principal Contact")
         if contact_element:
-            # Look for the next sibling or following element
             possible_name = contact_element.evaluate("el => el.nextElementSibling?.innerText || ''")
             if possible_name:
                 result["principal_contact"] = possible_name.strip()

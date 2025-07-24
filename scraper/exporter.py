@@ -3,7 +3,7 @@ from typing import List
 
 def export_to_csv(data: List[dict], output_path: str):
     """
-    Write a list of company dicts to CSV file
+    Write a list of BBB dicts to CSV file
     """
     if not data:
         print("No data to export.")

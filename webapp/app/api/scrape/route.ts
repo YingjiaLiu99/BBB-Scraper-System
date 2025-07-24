@@ -61,10 +61,6 @@ export async function POST(req: NextRequest) {
 
   const stagehand = new Stagehand({
     env: 'BROWSERBASE',
-    // modelName: "gpt-40-mini",
-    // modelClientOptions: {
-    //   apiKey: process.env.OPENAI_API_KEY,
-    // },
     apiKey: process.env.BROWSERBASE_API_KEY!,
     projectId: process.env.BROWSERBASE_PROJECT_ID!,
 
@@ -91,7 +87,7 @@ export async function POST(req: NextRequest) {
         }
       }
     } else if (type === 'businesses') {
-      // Just go to the user-provided business URL
+      // go to the user-provided business URL
       await page.goto(url, { waitUntil: 'networkidle' });
       await page.waitForTimeout(3000);
 
