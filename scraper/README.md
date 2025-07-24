@@ -1,4 +1,4 @@
-# BBB-Playwright-Scraper-Module
+# BBB-Playwright-Scraper-Module (Part A)
 
 This Python-based web scraper uses [Playwright](https://playwright.dev/python/) to collect listings of **A-rated Medical Billing companies** from the [Better Business Bureau](https://www.bbb.org) (BBB) website. The scraper gathers listing data from paginated search results and then visits each company’s detail page to extract deeper contact information.
 
@@ -51,8 +51,8 @@ scraper/
 From the root folder `BBB-Scraper-System`, run:
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate        # On Windows: venv\Scripts\activate
+python3 -m venv .venv
+source .venv/bin/activate        # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 playwright install
 ```
@@ -62,7 +62,7 @@ playwright install
 To solely test this module and run the scraper and export results to `/data/BBB_scraper_output.csv`:
 
 ```bash
-python main.py --url "https://www.bbb.org/search?filter_category=60548-100&filter_category=60142-000&filter_ratings=A&find_country=USA&find_text=Medical+Billing" --out data/BBB_scraper_output.csv
+python ./scraper/main.py --url "https://www.bbb.org/search?filter_category=60548-100&filter_category=60142-000&filter_ratings=A&find_country=USA&find_text=Medical+Billing" --out data/BBB_scraper_output.csv
 ```
 
 ---

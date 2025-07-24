@@ -16,7 +16,7 @@ def scrape_medical_billing_listings(start_url):
         context = browser.new_context(user_agent="Mozilla/5.0")
         page = context.new_page()
 
-        for page_num in range(1, 13):
+        for page_num in range(1, 3):
             url = f"{start_url}&page={page_num}"
             print(f"Fetching: {url}")
             page.goto(url, timeout=10000) # maximum 10 seconds for the page load

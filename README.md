@@ -1,6 +1,6 @@
 # BBB-Scraper-System (Part B & C)
 
-This project builds on **Part A** (Python-based Playwright scraper, you can find its README.md in its own folder) and adds two major components:
+This project builds on **Part A** (Python-based Playwright scraper, you can find its detailed README.md [here](./scraper/README.md)) and adds two major components:
 
 - **Part B: Stagehand Automation Module** — Wrap the scraper for AI-assisted Stagehand usage.
 - **Part C: Full-stack Web Application** — GUI + Supabase database integration built in Next.js.
@@ -151,14 +151,15 @@ Converts array of objects → CSV using `papaparse` and triggers download in bro
 
 ### How to Run and Test Locally
 
-1. **Create `.env` file** in the project root  
-   Include your `BROWSERBASE_API_KEY`, `PROJECT_ID`, and Supabase credentials.
+1. **Create `.env` file** in the webapp folder,  
+   Include your `BROWSERBASE_API_KEY`, `BROWSERBASE_API_KEY`, `OPENAI_API_KEY`, `BROWSERBASE_PROJECT_ID`, and Supabase credentials.
 
 2. **Install Python virtual environment** (Part A requirement)
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+# Start from the project root: BBB-SCRAPER-SYSTEM/
+python3 -m venv .venv
+source .venv/bin/activate        # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 playwright install
 ```
@@ -173,7 +174,13 @@ npm run dev
 
 Then open: [http://localhost:3000](http://localhost:3000)
 
+Then you can test the two scraper by hitting the submit button one by one. Refresh the page if the table doesn't render automatically. 
+
 Note: the book scraper will take ~ 4min to finish.  The shorten BBB scraper will take ~5min to finish, both progress indiction will be logged to console.
+
+Also you may notice that running the books scraper won't generate a .csv file in the data folder, that is because it doesn't go through the python-playwright scraper 
+
+module. If you want to download its result csv file, you can use the `download CSV` button on the web app to download. 
 
 ---
 

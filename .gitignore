@@ -12,7 +12,6 @@ build/
 .venv/
 
 # Output files
-data/*.csv
 *.log
 
 # Playwright cache (optional)
